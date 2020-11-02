@@ -1,0 +1,9 @@
+{
+    "$schema": "https://aka.ms/azure-quickstart-templates-metadata-schema#",
+    "type": "QuickStart",
+    "itemDisplayName": "Create a Linux VM to be used as an IoT Lab Workspace",
+    "description": "This QuickStart provides a hands-on expecience with Cloud technologies while doing the IoT Lab!",
+    "summary": "Create a Workspace for the IoT Lab",
+    "githubUsername": "GiovanniGrieco",
+    "dateUpdated": "2020-11-02"
+  }
