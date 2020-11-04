@@ -2,7 +2,7 @@
 
 set -x
 
-UID=1000
+USER_UID=1000
 
 echo 'nameserver 1.1.1.1' >> /etc/resolv.conf
 
@@ -23,7 +23,7 @@ if [ -z "$IS_AZURE_CLI_INSTALLED" ]; then
 fi
 
 
-USER_DIR=$(getent passwd $UID | cut -d ':' -f 6)
+USER_DIR=$(getent passwd $USER_UID | cut -d ':' -f 6)
 
 mkdir -p ${USER_DIR}/device-simulator/opendata
 cat <<EOF >>${USER_DIR}/device-simulator/azure.pem
@@ -50,4 +50,4 @@ R9I4LtD+gdwyah617jzV/OeBHRnDJELqYzmp
 -----END CERTIFICATE-----
 EOF
 
-chmod $UID:$UID -R ${USER_DIR}/
+chmod $USER_UID:$USER_UID -R ${USER_DIR}/
