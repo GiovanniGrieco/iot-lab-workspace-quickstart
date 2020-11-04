@@ -12,7 +12,7 @@
         "adminPassword": {
             "type": "securestring",
             "metadata": {
-                "description": "Password to access the Virtual Machine. If unsure, leave (and remember!) the default value."
+                "description": "Password to access the Virtual Machine."
             }
         },
         "vmSize": {
