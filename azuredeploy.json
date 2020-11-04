@@ -70,7 +70,6 @@
             "properties": {
                 "securityRules": [
                     {
-                        "comments": "Allow SSH access to the VM",
                         "name": "SSH",
                         "properties": {
                             "protocol": "TCP",
@@ -192,11 +191,6 @@
                             "id": "[resourceId('Microsoft.Network/networkInterfaces',variables('nicResName'))]"
                         }
                     ]
-                },
-                "diagnosticsProfile": {
-                    "bootDiagnostics": {
-                        "enabled": true
-                    }
                 }
             }
         },
