@@ -4,18 +4,21 @@
     "parameters": {
         "adminUsername": {
             "type": "string",
+            "defaultValue": "iotlabuser",
             "metadata": {
                 "description": "Username to access the Virtual Machine. If unsure, leave the default value."
             }
         },
         "adminPassword": {
             "type": "securestring",
+            "defaultValue": "GEN-PASSWORD",
             "metadata": {
                 "description": "Password to access the Virtual Machine. If unsure, leave (and remember!) the default value."
             }
         },
         "vmSize": {
             "type": "string",
+            "defaultValue": "Standard_B1s",
             "metadata": {
                 "description": "Indicate the size of the VM, i.e. its computing power and memory. If unsure, leave the default value."
             }
