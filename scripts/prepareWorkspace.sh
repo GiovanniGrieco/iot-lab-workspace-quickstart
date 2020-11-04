@@ -24,8 +24,6 @@ fi
 
 
 USER_DIR=$(getent passwd $UID | cut -d ':' -f 6)
-git clone https://github.com/GiovanniGrieco/iot-lab-data-visualization-example.git \
-    ${USER_DIR}/iot-lab-data-visualization-example/
 
 mkdir -p ${USER_DIR}/device-simulator/opendata
 cat <<EOF >>${USER_DIR}/device-simulator/azure.pem
