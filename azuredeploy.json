@@ -11,7 +11,6 @@
         },
         "adminPassword": {
             "type": "securestring",
-            "defaultValue": "GEN-PASSWORD",
             "metadata": {
                 "description": "Password to access the Virtual Machine. If unsure, leave (and remember!) the default value."
             }
