@@ -1,5 +1,11 @@
 #!/usr/bin/bash
 
+set -x
+
+UID=1000
+
+echo 'nameserver 1.1.1.1' >> /etc/resolv.conf
+
 apt update
 apt upgrade -y
 apt remove -y \
@@ -17,7 +23,7 @@ if [ -z "$IS_AZURE_CLI_INSTALLED" ]; then
 fi
 
 
-USER_DIR=$(getent passwd 1000 | cut -d ':' -f 6)
+USER_DIR=$(getent passwd $UID | cut -d ':' -f 6)
 git clone https://github.com/GiovanniGrieco/iot-lab-data-visualization-example.git \
     ${USER_DIR}/iot-lab-data-visualization-example/
 
@@ -46,3 +52,4 @@ R9I4LtD+gdwyah617jzV/OeBHRnDJELqYzmp
 -----END CERTIFICATE-----
 EOF
 
+chmod $UID:$UID -R ${USER_DIR}/

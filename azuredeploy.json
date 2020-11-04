@@ -212,7 +212,7 @@
                     "fileUris": [
                         "[concat(variables('artifactsLocation'), '/scripts/prepareWorkspace.sh')]"
                     ],
-                    "commandToExecute": "sudo bash prepareWorkspace.sh"
+                    "commandToExecute": "sudo bash prepareWorkspace.sh &> /etc/install.log"
                 }
             }
         }
