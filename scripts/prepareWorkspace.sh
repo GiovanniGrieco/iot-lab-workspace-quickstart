@@ -50,4 +50,4 @@ R9I4LtD+gdwyah617jzV/OeBHRnDJELqYzmp
 -----END CERTIFICATE-----
 EOF
 
-chmod $USER_UID:$USER_UID -R ${USER_DIR}/
+chown $USER_UID:$USER_UID -R ${USER_DIR}/
