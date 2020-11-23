@@ -20,7 +20,9 @@ apt install -y \
 apt autoremove -y
 
 # Install Azure-CLI from MS Official Repositories
-curl -sL https://aka.ms/InstallAzureCLIDeb | bash -y
+curl -sL https://aka.ms/InstallAzureCLIDeb --output /azure-cli.sh
+chmod +x /azure-cli.sh
+bash /azure-cli.sh -y
 
 mkdir -p ${USER_DIR}/device-simulator/opendata
 cat <<EOF >>${USER_DIR}/device-simulator/azure.pem
