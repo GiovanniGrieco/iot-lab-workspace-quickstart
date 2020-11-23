@@ -20,11 +20,28 @@ deb http://security.ubuntu.com/ubuntu/ focal-security universe
 deb http://security.ubuntu.com/ubuntu/ focal-security multiverse
 EOF"
 
-cat /etc/apt/sources.list
 echo 'nameserver 1.1.1.1' >> /etc/resolv.conf
 
 apt update
 apt upgrade -y
+
+# Use APT with official repos
+bash -c "cat > /etc/apt/sources.list <<EOF
+deb http://archive.ubuntu.com/ubuntu/ focal main restricted
+deb http://archive.ubuntu.com/ubuntu/ focal-updates main restricted
+deb http://archive.ubuntu.com/ubuntu/ focal universe
+deb http://archive.ubuntu.com/ubuntu/ focal-updates universe
+deb http://archive.ubuntu.com/ubuntu/ focal multiverse
+deb http://archive.ubuntu.com/ubuntu/ focal-updates multiverse
+deb http://archive.ubuntu.com/ubuntu/ focal-backports main restricted universe multiverse
+deb http://security.ubuntu.com/ubuntu/ focal-security main restricted
+deb http://security.ubuntu.com/ubuntu/ focal-security universe
+deb http://security.ubuntu.com/ubuntu/ focal-security multiverse
+EOF"
+
+echo 'nameserver 1.1.1.1' >> /etc/resolv.conf
+
+apt update
 apt remove -y \
     snapd
 apt install -y \
