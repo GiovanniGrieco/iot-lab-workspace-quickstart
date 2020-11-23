@@ -57,6 +57,7 @@ chmod +x /azure-cli.sh
 bash /azure-cli.sh -y
 
 mkdir -p ${USER_DIR}/device-simulator/opendata
+touch ${USER_DIR}/device-simulator/opendata/__init__.py
 cat <<EOF >>${USER_DIR}/device-simulator/azure.pem
 -----BEGIN CERTIFICATE-----
 MIIDdzCCAl+gAwIBAgIEAgAAuTANBgkqhkiG9w0BAQUFADBaMQswCQYDVQQGEwJJ
