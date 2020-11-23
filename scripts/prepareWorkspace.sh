@@ -3,6 +3,8 @@
 set -x
 
 USER_UID=1000
+USER_DIR=$(getent passwd $USER_UID | cut -d ':' -f 6)
+DEBIAN_FRONTEND=noninteractive
 
 echo 'nameserver 1.1.1.1' >> /etc/resolv.conf
 
@@ -17,13 +19,8 @@ apt install -y \
     python3-requests
 apt autoremove -y
 
-IS_AZURE_CLI_INSTALLED=$(apt show azure-cli | grep APT-Manual-Installed)
-if [ -z "$IS_AZURE_CLI_INSTALLED" ]; then
-    curl -sL https://aka.ms/InstallAzureCLIDeb | bash -y
-fi
-
-
-USER_DIR=$(getent passwd $USER_UID | cut -d ':' -f 6)
+# Install Azure-CLI from MS Official Repositories
+curl -sL https://aka.ms/InstallAzureCLIDeb | bash -y
 
 mkdir -p ${USER_DIR}/device-simulator/opendata
 cat <<EOF >>${USER_DIR}/device-simulator/azure.pem
