@@ -6,10 +6,8 @@ USER_UID=1000
 USER_DIR=$(getent passwd $USER_UID | cut -d ':' -f 6)
 DEBIAN_FRONTEND=noninteractive
 
-echo 'nameserver 1.1.1.1' >> /etc/resolv.conf
-
 # Use APT with official repos
-cat > /etc/apt/sources.list <<EOF
+bash -c "cat > /etc/apt/sources.list <<EOF
 deb http://archive.ubuntu.com/ubuntu/ focal main restricted
 deb http://archive.ubuntu.com/ubuntu/ focal-updates main restricted
 deb http://archive.ubuntu.com/ubuntu/ focal universe
@@ -20,7 +18,10 @@ deb http://archive.ubuntu.com/ubuntu/ focal-backports main restricted universe m
 deb http://security.ubuntu.com/ubuntu/ focal-security main restricted
 deb http://security.ubuntu.com/ubuntu/ focal-security universe
 deb http://security.ubuntu.com/ubuntu/ focal-security multiverse
-EOF
+EOF"
+
+cat /etc/apt/sources.list
+echo 'nameserver 1.1.1.1' >> /etc/resolv.conf
 
 apt update
 apt upgrade -y
