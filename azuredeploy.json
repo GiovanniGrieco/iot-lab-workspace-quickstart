@@ -17,7 +17,7 @@
         },
         "vmSize": {
             "type": "string",
-            "defaultValue": "Standard_B1s",
+            "defaultValue": "Standard_A1_v2",
             "metadata": {
                 "description": "Indicate the size of the VM, i.e. its computing power and memory. If unsure, leave the default value."
             }
